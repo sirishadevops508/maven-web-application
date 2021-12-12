@@ -1,0 +1,22 @@
+node
+{
+   stage('CheckoutCode')
+    {
+       git branch: 'development', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'
+     }
+    stage('Bulid')
+   {
+        sh "mvn clean package"
+    }
+    /*
+    stage('ExecuteSonarQubeReport')
+       {
+           sh "mvn sonar:sonar"
+        }
+        stage('DeployApplicationIntoTomcat')
+           {
+                sh 'cp  /var/lib/jenkins/workspace/pipelineproject/target/*.war  /home/sirisha/sirisoftwares/apache-tomcat-9.0.55/webapps/'
+            }
+            */
+          
+}
